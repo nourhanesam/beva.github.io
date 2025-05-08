@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aura Flora</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .fade-in-text {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+
+<!-- Navigation bar -->
+<nav class="navbar">
+  <div class="nav-wrapper">
+    <div class="nav-left">
+      <img class="nav-logo" src="https://cdn.pixabay.com/photo/2012/04/13/00/44/leaves-31399_1280.png" alt="">
+      <a href="index.html" class="brand-name">
+        <span style="color: rgb(180, 100, 160);"> Aura Flora</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="log.html" class="nav-item">
+        <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="Login Icon">
+        Log In
+      </a>
+      <a href="basket.html" class="nav-item">
+        <img src="https://cdn-icons-png.flaticon.com/128/263/263142.png" alt="Basket Icon">
+        Basket
+      </a>
+      <img class="nav-photo" src="https://img.icons8.com/?size=64&id=49318&format=png">
+      <div class="mode-images" >
+        <img onclick="toggleDarkMode()" src="https://cdn-icons-png.flaticon.com/128/606/606807.png" alt=" " title="Dark Mode">
+      </div>
+      
+      
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-image" style="position: relative;">
+  <div style="width: 100%; height: 100vh; overflow: hidden;">
+    <img src="https://images.pexels.com/photos/5857828/pexels-photo-5857828.jpeg" 
+         alt="Top Banner" 
+         style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+  <div style="position: absolute; top: 30%; left: 5%; color: white; font-size: 2em ;">
+    <div class="fade-in-text">Welcome to</div>
+    <div class="fade-in-text" >Aura Flora</div>
+    <div class="fade-in-text">Natural Beauty in Every Bloom</div>
+
+  </div>
+</section>
+
+
+
+
+
+<!-- New Section -->
+<div class="new-section">
+  <div class="new-image">
+    <img id="slider-image" src="https://cdn.pixabay.com/photo/2017/02/01/14/51/hand-2027922_1280.jpg" alt="Flower Image">
+  </div>
+  <div class="new-text">
+    <h2>New</h2>
+    <p>Here you can find the latest updates about flowers and products. Stay tuned for more!</p>
+  </div>
+</div>
+<!--new categories-->
+<div style="position: relative; width: 80%; margin: auto; overflow: hidden; border: 1px solid #ccc; padding: 10px;">
+
+ 
+  <div id="productTrack" style="display: flex; transition: transform 0.5s ease;">
+    <div class = "amazing" data-name = "pink lilies flowers">
+  <img src="https://i.postimg.cc/h4MgLQCL/photo-2025-04-28-23-06-27-removebg-preview-1.png" alt="red flowers " width="200" height="150" class="image">
+  
+  <span class="heb" title  = "Go to product page" > pink lilies flowers </span>
+  <span > <span class="price-box" >  <b>6000</b> EGP </span> </span >
+ </div> 
+ 
+ <div class = "amazing" data-name = "pink flowers">
+ <img src="https://i.postimg.cc/QdK3Z4jm/photo-2025-04-28-22-34-42-removebg-preview.png" alt="white flowers " width="200" height="150" class="image">
+ 
+  <span class="heb"  title="Go to product page">pink flowers</span> 
+  <span > <span class="price-box" >  <b>5000</b> EGP </span> </span >
+ </div>
+
+ <div class = "amazing" data-name = "multiple flowers">
+ <img src="https://i.postimg.cc/PqmnPCp8/photo-2025-04-28-22-01-39-removebg-preview.png" alt="yellow flowers " width="200" height="150" class="image">
+ 
+ <span class="heb"  title="Go to product page">multiple flowers</span>
+ <span > <span class="price-box" >  <b>4500</b> EGP </span> </span >
+ </div>  
+ 
+
+<div class = "amazing" data-name = "wild violet bouquet">  
+ <img src="https://i.postimg.cc/pdSQxvzM/p2.png" alt="blue flowers " width="200" height="150" class="image">
+ 
+  <span class="heb"  title="Go to product page">wild violet  bouquet </span>
+  <span > <span class="price-box" >  <b>4800</b> EGP </span> </span >
+ </div>
+ <div class = "amazing" data-name = "victorian era bouquet">
+ <img src="https://i.postimg.cc/C5qnNVfS/Whats-App-Image-2025-04-24-at-19-24-45-198b8c53-removebg-preview.png" alt=" different flowers " width="200" height="150" class="image">
+ 
+  <span class="heb" title="Go to product page">victorian era bouquet</span>
+  <span > <span class="price-box" >  <b>4800</b> EGP </span> </span >
+ </div> 
+ 
+</div>
+<!-- الأسهم -->
+<button onclick="moveLeft()" style="position: absolute; top: 40%; left: 0; background: pink; border: none; font-size: 24px; padding: 5px;">‹</button>
+<button onclick="moveRight()" style="position: absolute; top: 40%; right: 0; background: pink; border: none; font-size: 24px; padding: 5px;">›</button>
+
+</div>
+
+<script>
+let position = 0;
+function moveRight() {
+  const track = document.getElementById("productTrack");
+  const itemWidth = track.children[0].offsetWidth + 10; // 10 لو فيه gap أو margin
+  const containerWidth = track.parentElement.offsetWidth;
+  const totalItems = track.children.length;
+  const visibleItems = Math.floor(containerWidth / itemWidth);
+  const maxTranslate = (totalItems - visibleItems) * itemWidth;
+
+  if (Math.abs(position) < maxTranslate) {
+    position -= itemWidth;
+    track.style.transform = `translateX(${position}px)`;
+  }
+
+
+}
+
+function moveLeft() {
+const track = document.getElementById("productTrack");
+const itemWidth = track.children[0].offsetWidth + 10;
+
+if (position < 0) {
+ position += itemWidth;
+ track.style.transform = `translateX(${position}px)`;
+}
+}
+</script>
+
+
+
+
+  
+<!-- Quick access links -->
+<div class="quick-links">
+<h2 href="flowers.html">Categories</h2>
+</div>
+
+<!-- Flower gallery -->
+<div class="flowers-gallery">
+<div class="flower-item">
+  <a href="bouquet.html">
+    <img src="https://www.flowrista.com/Uploads/Product/b3477ab7-b99c-4eb2-9a9e-92f8aedbf7a2.jpg" alt="">
+  </a>
+  <p>BOUQUETS</p>
+</div>
+<div class="flower-item">
+  <a href="vases.html">
+    <img src="https://flowerssoul.com/upload/152bcfd3928eeee37e8d3096a87d5a15_compressed.jpeg" alt="">
+  </a>
+  <p>VASES</p>
+</div>
+<div class="flower-item">
+  <a href="second.html">
+    <img src="https://www.flowrista.com/Uploads/Product/66f4f4f2-a230-44f5-a344-31ddec742960.jpg" alt="">
+  </a>
+  <p>POTTED ROSES</p>
+</div>
+</div>
+<!--binifts slider-->
+<h2 class="slider-title" style="text-align: center;font-size:60px;font-family: Arial, sans-serif;color:rgb(180, 100, 160)">Our Benefits</h2>
+<div class="slider-container">
+  <div class="slide active">
+    <img src="https://i.postimg.cc/xnhqfSqQ/shipping1.jpg" alt="Image 1">
+    <div class="slide-content">
+      <h2>Shipping</h2>
+      <p>Experience same-day flower delivery to Cairo and Giza.swift shipping ,ensuring your sentiments are delivered promptly </p>
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="https://i.postimg.cc/QNRbkyNT/fresh1.jpg" alt="Image 2">
+    <div class="slide-content">
+      <h2>Freshness guarantee</h2>
+      <p>Experience premium rose quality with Aura Flora - We source our roses exclusively from the finest farms, ensuring a superior standard</p>
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="https://i.postimg.cc/VLnF7W5H/privacy1.jpg" alt="Image 3">
+    <div class="slide-content">
+      <h2>Privacy</h2>
+      <p>We handle message cards with utmost confidentiality. Sender info stays private, and no photos of gifts are taken out of respect for your privacy</p>
+    </div>
+  </div>
+
+  <!-- arrows -->
+  <button class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</button>
+  <button class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<!-- ✅ Script moved here -->
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+      }
+    });
+  }
+
+  function changeSlide(step) {
+    currentSlide += step;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    showSlide(currentSlide);
+  }
+
+  // Initialize
+  showSlide(currentSlide);
+</script>
+
+<!--شريط الصور-->
+<div style="text-align: center; padding: 40px;color:rgb(180, 100, 160)">
+  <h2 style="font-size: 24px; margin-bottom: 20px;">Follow Us</h2>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px;">
+    <img src="https://i.postimg.cc/NF75XFfb/insta2.png" alt="ايقونة انستا" style="width: 50px; height: 25px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <div style="font-size: 24px;">@Aura_Flora</div>
+  </div>
+  <img src="https://i.postimg.cc/SK32FHvL/1.png" alt="صورة مجمعة" style="width: 80%; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+  
+</div>
+<!-- About the company -->
+<h3 class="h3">Aura Flora</h3>
+<div class="from-company">
+  Aura Flora offers a 100% Customer Satisfaction Guarantee. We strive to make your experience buying flowers online with us unforgettable. Whether you are looking for same day flowers or next day flower delivery, AuraFlora.com promises to deliver great quality, personable customer service and stunning florist arranged bouquets.
+  We know that when you send flowers it comes from the heart, so we work hard to ensure your arrangements are created with the freshest flowers and delivered on time to help celebrate every occasion.
+  All of us at Aura Flora would like to not only be here for you today, but for all your future flower needs.
+</div>
+
+
+
+
+<!-- Scripts -->
+<script>
+  // Get the query parameter from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q');  // Get the search query from the URL
+
+  // If no query is provided in the URL, show a message
+  if (!query) {
+    document.getElementById('results').innerHTML = 'Please enter a search query.';
+  } else {
+    // Data to search through: Content of different pages
+    const pages = [
+      { url: 'index.html', content: 'Flowers, beautiful flowers, and floral arrangements' },
+      { url: 'bouquet.html', content: 'Different types of flowers such as roses and lilies' },
+      { url: 'vases.html', content: 'Elegant vases for use in any occasion' },
+      { url: 'v1.html', content: 'Contact us through this page for all details' },
+      // You can add more pages here
+    ];
+
+    // Filter pages that contain the query word in their content
+    const results = pages.filter(page => page.content.toLowerCase().includes(query.toLowerCase()));
+
+    // Display the results
+    const resultsContainer = document.getElementById('results');
+    if (results.length > 0) {
+      results.forEach(result => {
+        const resultDiv = document.createElement('div');
+        resultDiv.innerHTML = `<a href="${result.url}">${result.url}</a> - ${result.content}`;
+        resultsContainer.appendChild(resultDiv);
+      });
+    } else {
+      resultsContainer.innerHTML = 'No matching results found.';
+    }
+  }
+</script>
+<script>
+  function search() {
+  const query = document.getElementById('searchInput').value.trim();
+  if (query !== "") {
+    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+  }
+
+  }
+
+  let currentImageIndex = 0;
+  let sliderImages = [
+    "https://www.flowerssoul.com/upload/6655a4688bad312f23833edfb8a002e4_compressed.jpeg",
+    "https://www.flowerssoul.com/upload/1fc4133cdbebd0a7ad6d36b6fa77c150_compressed.jpeg",
+    "https://www.flowerssoul.com/upload/6e8e187f9c456d2e4a808b3b7cd5f652_compressed.jpeg",
+    "https://www.flowerssoul.com/upload/9912875c64cba4366ff9380077ff3edd_compressed.jpeg"
+  ];
+
+  function showImage(index) {
+    const img = document.getElementById("slider-image");
+    if (img) {
+      img.src = sliderImages[index];
+    }
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+    showImage(currentImageIndex);
+  }
+  setInterval(nextImage, 2000);
+
+  window.onload = function () {
+    showImage(currentImageIndex);
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const storedLang = localStorage.getItem("language") || "en";
+
+    function changeLanguage(lang) {
+      localStorage.setItem("language", lang);
+      const elements = document.querySelectorAll("[data-en]");
+      elements.forEach(function (element) {
+        element.textContent = element.getAttribute(`data-${lang}`);
+      });
+    }
+
+    changeLanguage(storedLang);
+
+    const flag = document.getElementById("nav-flag");
+    if (flag) {
+      flag.addEventListener("click", function () {
+        const currentLang = localStorage.getItem("language") || "en";
+        const newLang = currentLang === "en" ? "ar" : "en";
+        changeLanguage(newLang);
+      });
+    }
+  });
+</script>
+<!-- footer -->
+<div class="footer-wrapper">
+  <footer class="main-footer">
+    <div class="footer-container">
+      
+      <div class="footer-section">
+        <h3>Get To Know Us</h3>
+        <ul>
+          <li><a href="aboutus.html" target="_blank">About Us</a></li>
+          <li><a href="faqs.html" target="_blank">FAQs</a></li>
+          <li><a href="Policy.html" target="_blank">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>My Account</h3>
+        <ul>
+          <li><a href="log.html" target="_blank">Log In</a></li>
+          <li><a href="basket.html" target="_blank">Basket</a></li>
+          <li><a href="infor.html" target="_blank">My Orders</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li>022856466</li>
+          <li>0124576488</li>
+          <li>0105589690</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Payment Methods</h3>
+        <div class="payment-logos">
+          <img src="https://i.postimg.cc/SRdVrWyv/cash1.jpg" alt="أمان"  style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/SsW-gnBHq/cash2.png"  alt="أبل باي" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/2j7Hrf47/cash3.png"  alt="الايد الي ماسكة ورد" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/7Zd9mPkw/cash8.png"  alt="SYMPL" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/GtLxHHkJ/cash11.png"  alt="value" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/Ss7GSW-zx/cash12.png"  alt="visa" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/rsMQxhL4/cash4.jpg"  alt="Contact" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/Gh3XpSKw/cash5.png"  alt="فرصة" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/43c5MCft/cash6.png"  alt="master card" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/zXd0HS2L/cash7.png"  alt="اورنج كاش" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/7Zd9mPkw/cash8.png"  alt="بايموب" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/vZcXrgC0/cash9.png"  alt="بريميوم كارد" style="width: 50px; height: auto;">
+          <img src="https://i.postimg.cc/4yWbtsPC/cash13.png"  alt="فودافون كاش" style="width: 50px; height: auto;">
+
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="bottom-footer">
+    © 2025 Oraflora. All rights reserved.
+  </div>
+</div>
+
+
+
+<script>
+  function toggleDarkMode() {
+    
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>

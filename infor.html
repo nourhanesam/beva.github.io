@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>oraflora</title>
+  <link rel="stylesheet" href="infor.css">
+</head>
+<body>
+  <!-- Navigation bar -->
+<nav class="navbar">
+  <div class="nav-wrapper">
+    <div class="nav-left">
+      <img class="nav-logo" src="https://cdn.pixabay.com/photo/2012/04/13/00/44/leaves-31399_1280.png" alt="">
+      <a href="index.html" class="brand-name">
+        <span style="color: rgb(180, 100, 160);"> Aura Flora</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="log.html" class="nav-item">
+        <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="Login Icon">
+        Log In
+      </a>
+      <a href="basket.html" class="nav-item">
+        <img src="https://cdn-icons-png.flaticon.com/128/263/263142.png" alt="Basket Icon">
+        Basket
+      </a>
+      <img class="nav-photo" src="https://img.icons8.com/?size=64&id=49318&format=png">
+      <div class="mode-images" >
+        <img onclick="toggleDarkMode()" src="https://cdn-icons-png.flaticon.com/128/606/606807.png" alt=" " title="Dark Mode">
+      </div>
+      
+      
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div class="address">
+      <h2>Enter a new shipping address</h2>
+      
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option  value="egypt">Egypt</option>
+        <option  value="usa">United States</option>
+        <option  value="uk">United Kingdom</option>
+        <option value="germany">Germany</option>
+        <option value="france">France</option>
+        <option value="india">India</option>
+        <option value="japan">Japan</option>
+        <option value="canada">Canada</option>
+        <option value="brazil">Brazil</option>
+        <option value="australia">Australia</option>
+      </select>
+
+      <div class="user-name">
+        <label for="name">Recipient name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+      </div>
+
+      <div class="phone">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+
+      </div>
+
+      <div class="street">
+        <input type="text" id="streetName" name="streetName" placeholder="Street name">
+        <input type="number" id="streetNumber" name="streetNumber" placeholder="Street number">
+        <input type="number" id="unit" name="unit" placeholder="Floor, apartment, or villa number">
+        <input type="text" id="landmark" name="landmark" placeholder="Nearest landmark">
+      </div>
+
+      <div class="delivery-instructions">
+        <h3>Add delivery instructions</h3>
+
+        <label><input type="radio" name="addressType" value="home"> Home (7am–9pm, all days)</label>
+        <label><input type="radio" name="addressType" value="office"> Office (9am–6pm, Weekdays)</label>
+
+        <label><input type="checkbox" name="defaultAddress"> Use as my default address</label>
+      </div>
+
+      <div class="submit">
+        <button type="submit">Send</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector("button[type='submit']").addEventListener("click", function(event) {
+  event.preventDefault();  // Prevent form submission
+
+  // Check if all fields are filled out
+  const inputs = document.querySelectorAll("input, select");  // Get all input and select fields
+  let allFilled = true;
+
+  inputs.forEach(input => {
+    if (input.type !== "radio" && input.type !== "checkbox" && !input.value) {  // Check if the field is empty
+      allFilled = false;
+      input.style.borderColor = "red";  // Change border color to red for empty fields
+    } else {
+      input.style.borderColor = "#ccc";  // Reset border color if filled
+    }
+  });
+
+
+  if (!allFilled) {
+    this.style.backgroundColor = "red";  // Change button color to red if any field is empty
+    alert("Please fill in all fields.");
+  } else {
+    // If all fields are filled, confirm before submitting
+    const confirmation = confirm("Are you sure you want to submit your shipping address?");
+
+    if (confirmation) {
+      this.innerText = "Done"; 
+      this.style.backgroundColor = "#28a745";  // Change button color to green when confirmed
+    } else {
+      this.style.backgroundColor = "red";  // Change button color to red if not confirmed
+    }
+  }
+});
+document.getElementById("phone").addEventListener("input", function() {
+  const phoneValue = this.value;  
+  const phonePattern = /^[0-9]{10,15}$/;
+if (!phonePattern.test(phoneValue) && phoneValue.length > 0) {
+  alert("Please enter a valid phone number with 10–15 digits (numbers only).");
+
+
+  }
+});
+
+
+  function toggleDarkMode() {
+    
+    document.body.classList.toggle('dark-mode');
+  }
+
+  </script>
+</body>
+</html>

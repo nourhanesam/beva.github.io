@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASKET</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            
+        }
+        
+        .basket-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: rgb(255,240,247);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            
+        }
+        
+        h1 {
+            color: #e267ab;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .basket-items {
+            margin-top: 20px;
+        }
+        
+        .basket-item {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr;
+            align-items: right;
+            padding: 15px 0;
+            border-bottom: 1px solid  #e267ab;
+            text-align: right;
+        }
+        
+        .item-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .item-image {
+            width: 80px;
+            height: 80px;
+            margin-left: 15px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        
+        .item-details h3 {
+            margin: 0;
+            color: #333;
+        }
+        
+        .item-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        
+        .item-price {
+            font-weight: bold;
+            color: #a8427a;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-controls button {
+            background-color: #f8bbd0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #ad1457;
+        }
+        
+        .quantity-controls span {
+            margin: 0 10px;
+            min-width: 20px;
+            text-align: center;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff5252;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .basket-summary {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            text-align: left;
+        }
+        
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .checkout-btn {
+            background-color: #e267ab;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+        }
+        
+        .checkout-btn:hover {
+            background-color:#a8427a ;
+        }
+        .basket-background {
+            background-image: url('https://images.pexels.com/photos/5857828/pexels-photo-5857828.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="basket-background">
+        <div class="basket-container">
+            <h1>BASKET</h1>
+        
+            <div class="basket-items" id="basketItems">
+            </div>
+        
+            <div class="basket-summary">
+                <p class="total-price">Total: <span id="totalPrice">0.00</span> EGP</p>
+                <button class="checkout-btn" onclick="window.location.href='infor.html'">Check out</button>
+            </div>
+        </div>
+</div>
+    <script>
+        const products = [
+            { 
+                id: 1, 
+                name: "Golden Radiance",price: 3000, 
+                quantity: 1, 
+                image: "https://i.postimg.cc/VLdyXG0w/photo-2025-04-28-21-20-29-removebg-preview.png"
+            },
+            { 
+                id: 2, 
+                name: "Blushing Charm", 
+                price: 3500, 
+                quantity: 1, 
+                image: "https://i.postimg.cc/k5rdJQ4m/photo-2025-04-28-21-58-02-removebg-preview.png" 
+            },
+            { 
+                id: 3, 
+                name: "Serenity Elegance", 
+                price: 4200, 
+                quantity: 1, 
+                image: "https://i.postimg.cc/k4srvLyJ/photo-2025-04-28-21-53-30-removebg-preview.png" 
+            },
+            { 
+                id: 4, 
+                name: "Amour in Bloom", 
+                price: 4500, 
+                quantity: 1, 
+                image: "https://i.postimg.cc/PqmnPCp8/photo-2025-04-28-22-01-39-removebg-preview.png" 
+            },
+            {
+                id: 5,
+                name: "Blushed Elegance",
+                price: 4800,
+                quantity: 1,
+                image: "https://i.postimg.cc/TwfMmTgN/photo-2025-04-28-22-08-17-removebg-preview.png" 
+            },
+            {
+                id: 6,
+                name: "Blossom Dreams",
+                price: 5000,
+                quantity: 1,
+                image: "https://i.postimg.cc/QdK3Z4jm/photo-2025-04-28-22-34-42-removebg-preview.png" 
+            },
+            {
+                id: 7,
+                name: "Eternal Bloom",
+                price: 3500,
+                quantity: 1,
+                image: "https://i.postimg.cc/X7zbhS6X/photo-2025-04-28-22-42-26-removebg-preview.png" 
+            },
+            {
+                id:8,
+                name:"First Light",
+                price:4450,
+                quantity: 1,
+                image:"https://i.postimg.cc/4NdGB4Mr/photo-2025-04-28-23-04-05-removebg-preview.png" 
+            },
+            {
+                id:9,
+                name:"Breeze of Beauty",
+                price: 6000,
+                quantity: 1,
+                image:"https://i.postimg.cc/h4MgLQCL/photo-2025-04-28-23-06-27-removebg-preview-1.png" 
+            },
+        ];
+        
+        
+        const basketItemsContainer = document.getElementById('basketItems');
+        const totalPriceElement = document.getElementById('totalPrice');
+        
+        
+        function renderBasketItems() {
+            basketItemsContainer.innerHTML = '';
+            let total = 0;
+            
+            products.forEach(product => {
+                total += product.price * product.quantity;
+                
+                const itemElement = document.createElement('div');
+                itemElement.className = 'basket-item';
+                itemElement.innerHTML = `
+                    <div class="item-info">
+                        <img src="${product.image}" alt="${product.name}" class="item-image">
+                        <div class="item-details">
+                            <h3>${product.name}</h3>
+                            <p class="item-price">${product.price} EGP</p>
+                        </div>
+                    </div>
+                    <div class="quantity-controls">
+                        <button onclick="decreaseQuantity(${product.id})">-</button>
+                        <span>${product.quantity}</span>
+                        <button onclick="increaseQuantity(${product.id})">+</button>
+                    </div>
+                    <button class="remove-item" onclick="removeItem(${product.id})">×</button>
+                `;
+                
+                basketItemsContainer.appendChild(itemElement);
+            });
+            
+            totalPriceElement.textContent = total;
+        }
+        function increaseQuantity(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                product.quantity++;
+                renderBasketItems();
+            }
+        }
+        function decreaseQuantity(productId) {const product = products.find(p => p.id === productId);
+            if (product && product.quantity > 1) {
+                product.quantity--;
+                renderBasketItems();
+            }
+        }
+        function removeItem(productId) {
+            const index = products.findIndex(p => p.id === productId);
+            if (index !== -1) {
+                products.splice(index, 1);
+                renderBasketItems();
+            }
+        }
+        renderBasketItems();
+    </script>
+</body>
+</html>

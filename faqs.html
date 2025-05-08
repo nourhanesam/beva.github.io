@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions (FAQ)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgb(180, 100, 160); 
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+            font-size: 10px; 
+            height: 45px; 
+            line-height: 20px; 
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: rgb(180, 100, 160); /* Pinkish purple */
+            text-align: center;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-item h3 {
+            background-color:rgb(255, 240, 247) ;
+            color: #333;
+            padding: 10px;
+            margin: 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .faq-item p {
+            display: none;
+            background-color: rgb(255, 240, 247); /* Light pink */
+            padding: 10px;
+            border-left: 4px solid rgb(180, 100, 160); /* Pinkish purple border */
+            border-radius: 5px;
+        }
+        .faq-item.active p {
+            display: block;
+        }
+                footer {
+            background-color: #322f2f;
+            padding: 5px 0;
+            text-align: center;
+            color: white;
+            font-size: 10px;
+            position: absolute;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+}
+
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Frequently Asked Questions (FAQ)</h1>
+</header>
+
+<section>
+    <h2>Commonly Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>What is our privacy policy?</h3>
+        <p>We respect your privacy and work hard to protect your personal data. To learn more, please refer to our privacy policy.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How can I contact customer support?</h3>
+        <p>You can reach us via email at support@aura-flora.com or through the contact number at the bottom of the page.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Can I return products?</h3>
+        <p>Yes, we offer a 30-day return policy from the date of purchase. Please visit our return policy page for more details.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How can I track my order?</h3>
+        <p>Once your order is confirmed, we will send you an email with a tracking link to monitor your order's status.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Do you offer international shipping?</h3>
+        <p>Yes, we provide international shipping to most countries. Please feel free to contact our support team for more information.</p>
+    </div>
+</section>
+
+<footer>
+    <p >&copy; 2025 Aura Flora. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // JavaScript for showing and hiding answers
+    const faqItems = document.querySelectorAll('.faq-item h3');
+    
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

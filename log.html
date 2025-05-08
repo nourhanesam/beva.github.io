@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="log.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section id="logcreat">
+    <div class="continer">
+        <div class="row">
+            <div id="welcome">
+                <div class="social">
+                    <h2> Welcome In Aura Flora</h2>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                </div>
+                <div class="btn">
+                    <div class="creat"><button>Creat Account</button></div>
+                    <div class="log"><button>log in</button></div>
+                </div>
+            </div>
+            <div id="register" class="hide">
+                <form class="form">
+                    <h2 class="title">book from here</h2>
+                    <div class="input">
+
+                        <div>
+                            <label for="username">Full Name</label>
+                            <input class="in" name="name" id="username" type="text" placeholder="Your Name" required>
+                        </div>
+                        <div> <label for="password">Enter Your Passwarrd</label>
+                            <input class="in" type="password" name="password" id="password" placeholder="Your Passwarrd"
+                                required>
+                        </div>
+                        <div> <label for="number"> Enter Your Phone Number</label>
+                            <input class="in" type="number" name="number" id="number" placeholder="Your Phone" required>
+                        </div>
+                        <div> <label for="email">Enter Your Email</label>
+                            <input class="in" type="email" name="emai;" id="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <h2 class="method">Payment Method</h2>
+                    <div class="pay">
+                        <div>
+                            <input checked type="radio" name="pay" value="cash" id="cash">
+                            <label for="cash">Cash</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pay" value="creditcard" id="creditcard">
+                            <label for="creditcard">Credit Card</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="pay" value="online" id="online">
+                            <label for="online">Online</label>
+                        </div>
+                    </div>
+                    <button type="submit">Register</button>
+                    <span id="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+                </form>
+            </div>
+
+
+
+            <div id="login" class="hide">
+                <div class="social">
+                    <h2 class="title">book from here</h2>
+                  
+                    <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+                <h2 class="h">Use Your Email And Passwarrd</h2>
+                <form><div class="input">
+                    <div>
+                        <input class="in" type="email" name="emai;" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div>
+                        <input class="in" type="password" name="password;" id="password" placeholder="Your Passwarrd"
+                            required>
+                    </div></div>
+                    <a href="#">Forget Your Passwarrd?</a> 
+                      <button type="submit">Log In</button> 
+                     
+                </form>
+                <span id="arrow" class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </div>
+            <img src="https://i.postimg.cc/Yqp2wJJF/photo-2025-05-06-12-28-26.jpg" alt="flower">
+        </div>
+</section>
+        <script src="test.js"></script>
+</body>
+
+</html>
