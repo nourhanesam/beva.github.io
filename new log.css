@@ -1,0 +1,688 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%; 
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: rgb(255, 240, 247);
+    box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+  .mode-images {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+   cursor: pointer;
+  }
+  
+  .mode-images img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  margin-right: 10px; 
+
+  }
+  
+  
+  
+  .home-icon {
+    margin-right: 8px; 
+    width: 24px; 
+    height: 24px; 
+  }
+  
+  .brand-name {
+    font-family: 'Open Sans', 'Helvetica Neue';
+    font-size: 24px;
+    font-weight: bold; 
+    margin-right: 20px; 
+    text-decoration: none;
+  
+  }
+  
+  .nav-logo {
+    width: 40px; 
+    height: 40px;
+  }
+  
+  .nav-home {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  
+  .nav-home img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  .nav-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    padding: 0 20px; 
+  }
+  
+  
+  .nav-left, .nav-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-left {
+    margin-bottom: 10px;
+  }
+  
+  .nav-right {
+    gap: 25px; 
+  }
+  
+  .nav-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .nav-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  
+  
+  
+  .nav-photo {
+  width: 60px;  
+  height: 60px;
+  margin-right: 10px;
+  vertical-align: middle;
+  }
+  
+  .nav-photo:last-of-type {
+  width: 30px;  
+  height: 30px;
+  }
+ 
+     /* creat and log */
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+user-select: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+}
+:root{
+--white:rgb(255, 240, 247);
+--pink:rgb(231, 188, 217);
+}
+.hide{
+  display: none !important;
+  transition-duration: 1s;
+}
+.continer{
+  max-width: 1300px;
+  margin:67px auto;
+  padding: 3rem 20px;
+
+}
+.continer .row{
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  box-shadow: 0 0 0 0 var(--white);
+  border-radius: 100px 0 0 100px ;  
+     background-color:rgba(233, 160, 224, 0.99); 
+     position: relative;
+}
+.continer .row #welcome,
+#login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.continer .row #welcome h2{
+  text-transform: uppercase;
+  word-spacing: 2px;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 10px;
+
+}
+.continer .row #welcome .social{
+  margin-bottom: 10px;
+}
+.continer .row #welcome .social a i{
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 25px;
+  margin-right: 7px;
+}
+.continer .btn button{
+      padding: 11px 28px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(100deg, #b63e8c, #dba5c8);
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+
+ 
+}
+/* register */
+.form {
+  background-color: var(--white);
+  padding: 20px ;
+  border-radius: 100px 0 0 100px ;
+height: 100%;
+
+}
+
+form .title,
+#login .title{
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  word-spacing: 1px;
+  padding-bottom: 5px;
+  position: relative;
+  text-align: center;
+  margin: 13px;
+}
+.title::after{
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(50deg, #b63e8c, #dba5c8);
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+ form .input {
+    padding-top: 1px;
+    padding-bottom: 25px;
+}
+img{
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+form .input div{
+  display: block;
+  margin: 10px 0;
+
+}
+form .input div .in{
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px; 
+   box-shadow: -1px 1px 20px 3px var(--pink);
+  transition:ease 0.4s ;
+}
+form .in:hover{
+  transform: scale(1.09);
+}
+form .input div label{
+  font-size: 17px;
+  font-weight: 900;
+  display: block;
+  padding-bottom: 5px ;
+}
+form h2{
+  padding: 5px 0;
+}
+form .pay{
+padding: 7px 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+form .pay div label{
+  font-size: 18px;
+  font-weight: 500;
+}
+form .pay input{
+  accent-color:rgba(232, 33, 156, 0.333);
+  margin-right: 3px;
+  outline: none;
+  border: none;
+}
+form button{
+  display: block;
+padding: 9px;
+  border: 1px solid white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(100deg, #b63e8c, #dba5c8);
+  text-align: center;
+  width: 70%;
+  margin: 5px auto;
+  font-size: 15px;
+  font-weight: 400;
+  transition-duration: 0.6s;
+}
+form button:hover{
+background: white;
+color:#b63e8c;
+}
+/* login */
+#login .social .title{
+  font-size: 35px;
+  font-weight: 800;
+}
+#login .social a{
+text-decoration: none;
+color:#b63e8c;
+text-decoration: none;
+cursor: pointer;
+font-size: 25px;
+margin-right: 7px;
+
+}
+/* .social{
+  margin-bottom: 70px;
+} */
+#login .social a i{
+background-color: white;
+padding: 10px;
+box-shadow: -1px 1px 20px 3px var(--pink);
+border-radius: 0 10px 0 10px;
+margin-top: 15px;
+transition: ease 0.4s;
+} 
+#login .social a :hover  {
+transform: scale(1.2);
+}
+#login .h{
+font-size: 15px;
+font-weight: 400;
+color: #7b7373;
+margin-top: 10px;
+}
+#login form .input .in{
+  width: 300px;
+  margin-top: 5px;
+}
+#login form a{
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #b63e8c;
+  margin: 10px 0 20px;
+}
+#arrow{
+  font-size: 25px;
+  position: absolute;
+  right: 60%;
+  bottom: 4px;
+  cursor: pointer; 
+padding: 7px;
+border-radius: 20px;
+background-color: #bc4f96; 
+display: flex;
+}
+#arrow i{
+  color:#ffff;
+
+
+}
+/* responsive */
+@media (max-width:1280px){
+img{
+  height: 100%;
+}
+}
+@media (max-width:1100px){
+ 
+ #logcreat .continer{
+      padding: 2rem 30px;
+  }
+  #logcreat .continer .row #welcome h2{
+      font-size: 27px;
+      font-weight: 600;
+  }
+  #logcreat #login .title,
+  #logcreat form .title{
+      font-size: 25px;
+      font-weight: 800;
+      padding-bottom: 8px;
+  }
+}
+@media (max-width:1000px){
+  #logcreat .continer .row #welcome h2{
+      font-size: 24px;
+      font-weight: 600;
+  }
+}
+@media (max-width:920px){
+  #logcreat .continer .row #welcome h2{
+      font-size: 23px;
+      font-weight: 600;
+  }
+}
+@media (max-width:800px){
+  .continer .row{
+      display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  }
+  #logcreat .continer .row #welcome h2{
+      padding: 20px 0 0 ;
+  }
+  .continer .row{
+      border-radius: 100px 100px 0  0  ;  
+  }
+  #register #arrow{
+      top: 47%;
+      right: 10px;
+      height: 37px;
+  }
+  #login #arrow{
+      top: 36%;
+      right: 13px;
+      height: 37px;
+  }
+  #login .title{
+      padding: 20px;
+      font-size: 20px;
+      font-weight: 600;
+  }
+
+}
+@media (max-width:600px){
+  .continer .row{
+      row-gap: 3px;
+  }
+  #login #arrow{
+      right: 8px;
+      top:42%;
+  }
+  #register #arrow{
+      top:52%;
+      right: 8px;
+  }
+  #register .form{
+      border-radius: 100px 100px 0 0 ;
+  }
+  #register form button{
+      margin: 5px auto -6px;
+  }
+}
+@media (max-width:400px){
+  #logcreat .continer{
+      width: 100%;
+      padding:10px 0;
+      margin: 30px 2px ;
+
+  }
+  #logcreat img{
+      height: 110%;
+      margin-top: 6px;
+  }
+
+  #logcreat .continer .row #welcome h2{
+      padding: 44px 0 0;
+      font-size: 22px;
+      font-weight: 800;
+  }
+  #logcreat #login .title, #logcreat form .title{
+      font-size: 24px;
+      font-weight: 600;
+      padding-bottom: 10px;
+  }
+  #login form a{
+      font-size: 14px;
+  }
+  form button{
+  padding: 8px;
+  margin: -3px auto;}
+  #login .social a i{
+      padding: 5px;
+  }
+  #login #arrow{
+      top: 51%;
+      font-size: 22px;
+      height: 35px;
+  }
+  #login .h {
+      font-size: 13px;
+      font-weight:500 ;
+  }
+  #register form .method{
+      font-size: 20px;
+  }
+  #logcreat .continer .row #welcome .social a i{
+      font-size: 21px;
+  }
+  #logcreat .continer .btn button{
+      font-size: 12px;
+      font-weight: 500;
+      padding: 10px 15px;
+      margin: 8px 0;
+  }
+
+#register.title{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+}
+#register form .pay div label{
+  font-size: 17px;
+}
+#register form .pay input{
+  margin-right:-1px ;
+}
+#register #arrow{
+  top: 59%;
+  font-size: 23px;
+  padding: 6px;
+}
+#register form button{
+  margin-bottom: -23px;
+  font-size: 15px;
+}
+#login #social{
+  padding: 10px;
+}
+}
+@media (max-width:450px){
+  #logcreat .continer .row #welcome h2 {
+      padding: 50px 0 0;
+      font-size: 21px;
+      font-weight: 600;
+  }
+  #logcreat  .continer .row #welcome .social a i {
+  font-size: 22px;
+ }
+ #logcreat  .continer .btn button{
+  font-size: 13px;
+ }
+ #logcreat #login .title, #logcreat form .title{
+  font-size: 22px;
+ }
+ #register form .method{
+  font-size: 19px;
+}
+#register #arrow{
+  top: 60%;
+}
+#login #arrow{
+  top: 51%;
+}
+#login .social a i{
+  padding: 5px;
+}
+  #login form button {
+      margin: -11px auto 8px;
+}
+}
+@media (max-width:391px){
+  #login #arrow {
+      top: 50%;
+  }
+  #register #arrow {
+      top: 59%;
+      font-size: 22px;
+      padding: 8px;
+  }
+  #register form button {
+      margin-bottom: -19px;
+      font-size: 15px;
+  }
+}
+@media (max-width: 770px) {
+  #login #arrow {
+      top: 38%;
+      right: 13px;
+      height: 37px;
+  }
+  #logcreat .continer .row #welcome{
+      padding: 14px 0 10px;
+  }
+}
+@media (max-width: 820px){
+  #login{
+      padding: 20px;
+  }
+  #logcreat #login .title, #logcreat form .title {
+      font-size: 23px;
+  }
+  #login .social a i{
+      padding: 6px;
+  }
+  #login #arrow {
+      font-size: 21px;
+      right: 56%;
+  }
+  #register #arrow{
+      font-size: 21px;
+      right: 59%;
+      bottom: 10px;
+  }
+  #register{
+      padding: 10px;
+  }
+  #register  form .input div label,
+  #register form .pay div label{
+      font-size: 14px;
+  }
+  #register form .method{
+      font-size: 18px;
+  }
+}
+/* creat and log */
+.footer-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transform: scale(1.02);
+}
+
+.main-footer {
+  background-color: rgb(255, 240, 247);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+  padding: 5px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: rgb(180, 100, 160);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 40px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #d63384;
+  transform: translateX(5px);
+}
+
+.payment-logos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.payment-logos img {
+  width: 50px;
+  height: auto;
+}
+
+.bottom-footer {
+  background-color: #322f2f;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+a{
+  text-decoration: none;
+}
