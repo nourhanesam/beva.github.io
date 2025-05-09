@@ -299,3 +299,28 @@ font-size: 16px;
 margin-top: 10px;
 
 }
+@media (max-width: 768px) {
+  .container {
+      grid-template-columns: 1fr; /* Stack the items vertically on smaller screens */
+  }
+  .search-form {
+      width: 100%; /* Ensure search form takes full width on small screens */
+      margin-left: 0;
+      bottom: 0;
+  }
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+
+body.dark-mode .amazing {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+body.dark-mode .heb {
+  color: #ddd;
+}

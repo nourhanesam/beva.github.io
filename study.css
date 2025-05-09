@@ -380,36 +380,32 @@ color: rgba(53, 50, 50, 0.851);
     font-family : 'Times New Roman', Times, serif;} 
 
     .reviews-title {
-       font-size:  45px;
-       font-family: 'Times New Roman', Times, serif;
-       position :relative;
-       top :40px;
-       left : 550px ;
-       color: rgb(180 , 100 , 160);
-       cursor: pointer;
-    }
+      font-size:  45px;
+      font-family: 'Times New Roman', Times, serif;
+      position :relative;
+      top :40px;
+      left : 550px ;
+      color: rgb(180 , 100 , 160);
+      cursor: pointer;
+   }
 
+ 
     
     .customer-names {
       font-size: 25px;
-      position: relative;
-      top : 100px;
-      left :70px; 
      font-weight: bold;
     }
 
     .verified { 
       color: green;
       font-size : 20px;
-      top : 100px;
       position: relative;
-      left :100px; 
+     
     }
    .rating {
      position :relative ;
-    top : 100px;
       font-size : 15px;
-      left : 145px;
+      
     
 
    } 
@@ -419,6 +415,225 @@ color: rgba(53, 50, 50, 0.851);
       font-family: 'Times New Roman', Times, serif;
       display: block;
        margin-left: 55px;
-      margin-top: 150px;
+     
+      position: static;
 
+    }
+   table{
+     width: 1340px;
+     border-collapse: collapse;
+     
+    
+    }
+    
+    td {
+     
+     border: 2px solid rgb(180 , 100 , 160);
+     padding: 15px 20px;
+     vertical-align: top;
+     box-shadow : 0 4px 8px 11px rgb(240, 210, 224); 
+     font-size: 18px;
+     
    }
+   @media (max-width: 768px) {
+    /* تضبيط الـ navbar */
+    .navbar, .nav-wrapper {
+      flex-direction: column;
+      height: auto;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .nav-left, .nav-right {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .product-name {
+      font-size: 35px;
+      text-align: center;
+      left: 0;
+      margin: 0 auto 40px auto;
+      position: static;
+    }
+  
+    .text-box, .image-container {
+      width: 90%;
+      margin: 20px auto;
+      left: 0;
+    }
+  
+    .text-box {
+      height: auto;
+    }
+  
+    .gallary {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding-left: 0;
+    }
+  
+    .gallary img {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+  
+    .tips-title, .reviews-title {
+      font-size: 30px;
+      position: static;
+      text-align: center;
+      margin-top: 40px;
+    }
+  
+    .tips {
+      width: 90%;
+      font-size: 20px;
+      left: 0;
+      margin: 0 auto;
+      position: static;
+      display: block;
+    }
+  
+    .description-title {
+      font-size: 30px;
+      margin-left: 10px;
+      text-align: center;
+    }
+  
+    .bouquet-description {
+      font-size: 20px;
+      margin: 10px auto;
+      text-align: center;
+      padding: 0 10px;
+    }
+  
+    table {
+      width: 100%;
+      font-size: 14px;
+      display: block;
+      overflow-x: auto;
+    }
+  
+    td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .review {
+      font-size: 18px;
+      margin-left: 0;
+      padding: 10px 0;
+    }
+  
+    .customer-names {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .verified {
+      font-size: 16px;
+      display: block;
+      text-align: center;
+    }
+  
+    .cart {
+      text-align: center;
+      font-size: 20px;
+    }
+  
+    .add {
+      font-size: 18px;
+      padding: 8px 20px;
+      width: auto;
+    }
+  
+    .popup {
+      width: 90%;
+      left: 50%;
+      top: 50%;
+    }
+  }
+  
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .success{
+  color: #fff; 
+}
+
+
+
+body.dark-mode .product-name {
+  color: #fff;
+}
+
+
+
+body.dark-mode .image-container {
+  background-color: #2e2e2e;
+  border-color: #444;
+}
+
+body.dark-mode .product-details {
+  color: #333;
+}
+
+body.dark-mode .text-box {
+  background-color: #333;
+  border-color: #444;
+  color: #fff;
+}
+
+
+body.dark-mode .bouquet-description{
+  color: #fff;
+}
+
+body.dark-mode .tips {
+  border: 3px solid #444;
+  
+}
+
+
+
+
+body.dark-mode .popup {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode td {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+
+body.dark-mode .rating {
+  color: #ddd;
+}
+
+body.dark-mode .review {
+  color: #ddd;
+}
+
+
+body.dark-mode .popup button {
+  background-color: #6f3e94;
+  color: white;
+}
+
+body.dark-mode .popup button:hover {
+  background-color: #a3337f;
+}
+
+
+
+body.dark-mode .tips-title{
+  color: #fff;
+}

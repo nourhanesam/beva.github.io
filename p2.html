@@ -85,33 +85,63 @@
             Bring timeless beauty and rich color to your space with our Red Potted Rose Plant. Known for its deep crimson petals and classic fragrance, this rose variety is perfect for balconies, patios, or even indoor corners that receive plenty of sunlight. Grown in a durable nursery pot, it arrives healthy, well-rooted, and ready to bloom.
                        
   </div> 
-                       <span class = "reviews-title" title="customer reviews"> Happy Customers</span>
-          <div class="reviews">
-             <span class="customer-names"><b> Ahmed Magdy</b></span>
-             <span class="verified" >verified customer</span>
-             <span class="rating" >⭐️⭐️⭐️⭐️</span>
-             <span class = "review" > 
+  <span class = "reviews-title" title="customer reviews"> Happy Customers</span>
+   <div class="reviews" style="margin-top: 60px;">
+    <table>
+  <tr>
+   <td><span class="customer-names"><b> Ahmed Magdy</b></span>
+    <span class="verified" >verified customer</span></td>
+    <td><span class="rating" > Rating:⭐️⭐️⭐️⭐️</span>
+      <span class = "review" > 
 "For the price, this set is a steal. The plants were smaller than I expected, but they quickly took root and began to grow. I'm looking forward to seeing them in full bloom."
- </span>
-
- <span class="customer-names"><b>Kholoud  Yahia </b></span>
- <span class="verified" >verified customer</span>
- <span class="rating" >⭐️⭐️⭐️⭐️</span>
- <span class = "review" > 
-  "Out of the four plants, two thrived while the other two struggled despite my care. Customer service was responsive and offered helpful advice. Overall, a decent purchase."
-</span>
-<span class="customer-names"><b>Dalia Samir</b></span>
-<span class="verified" >verified customer</span>
-<span class="rating" > ⭐️⭐️⭐️⭐️</span>
+   
+</span></td></tr>
+<tr>
+<td><span class="customer-names"><b>Kholoud  Yahia </b></span>
+<span class="verified" >verified customer</span></td>
+<td> <span class="rating" > Rating:⭐️⭐️⭐️⭐️</span>
 <span class = "review" > 
- "I’m not great with plants but these roses are super forgiving. Just enough sun and water, and they keep blooming. They even survived the heat wave we had last week. Definitely beginner-friendly! ."
+"Out of the four plants, two thrived while the other two struggled despite my care. Customer service was responsive and offered helpful advice. Overall, a decent purchase."
+</span></td></tr>
+<tr>
+<td style="width: 400px"><span class="customer-names"><b>Dalia Samir</b></span>
+<span class="verified" >verified customer</span></td>
+<td style="width: 900px" ><span class="rating" >Rating:⭐️⭐️⭐️⭐️</span>
+<span class = "review" > 
+"I’m not great with plants but these roses are super forgiving. Just enough sun and water, and they keep blooming. They even survived the heat wave we had last week. Definitely beginner-friendly! ."
 
 
-</span>
+</span></td></tr>
+</table>
 
-
-
-          </div>       
+ </div>       
+   
             
-                     </body>
-                     </html>
+<script>
+
+
+  window.onload = function() {
+     
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+      }
+  };
+
+  
+  function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      
+     
+      if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('dark-mode', 'enabled');
+      } else {
+          localStorage.setItem('dark-mode', 'disabled');
+      }
+  }
+
+
+</script>
+
+</body>
+            </html>
+           

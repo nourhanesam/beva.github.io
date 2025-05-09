@@ -62,7 +62,39 @@
             bottom: 0;
             width: 100%;
 }
+.accordion {
+      background-color: rgb(255, 240, 247);
+      color: #444;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 18px;
+      transition: 0.4s;
+      border-bottom: 1px solid #ccc;
+    }
 
+    .accordion.active,
+    .accordion:hover {
+      background-color: rgb(255, 240, 247);
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+
+    iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  margin-top: 10px;
+  margin-bottom: 80px; 
+}
         
     </style>
 </head>
@@ -98,6 +130,29 @@
     <div class="faq-item">
         <h3>Do you offer international shipping?</h3>
         <p>Yes, we provide international shipping to most countries. Please feel free to contact our support team for more information.</p>
+    </div>
+    <div class="faq-item">
+        <button class="accordion" ><b>▶️ How can I care of flowers?</b></button>
+<div class="panel">
+  <p>Here's a short video explaining everything:</p>
+  <iframe src="https://www.youtube.com/embed/KtPJZZwpMzE" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+</div>
+
+<script>
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(button => {
+    button.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    });
+  });
+</script>
     </div>
 </section>
 

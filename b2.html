@@ -68,7 +68,12 @@
            function closePopup()
            {
               popup.classList.remove("open-popup");
-           }</script>
+           }
+           function toggleDarkMode() {
+             document.body.classList.toggle('dark-mode');
+}
+
+           </script>
 </div> 
     <div class="image-container">
       <img src ="https://i.postimg.cc/k5rdJQ4m/photo-2025-04-28-21-58-02-removebg-preview.png" alt=" common sunflower " width="200" height="150" class=" custom-image"> <br>
@@ -91,34 +96,62 @@
             Blushing Sharm is a charming tulip bouquet featuring soft, romantic hues that evoke grace and warmth—perfect for expressing heartfelt emotions with elegance and simplicity
                        
   </div> 
-                       <span class = "reviews-title" title="customer reviews"> Happy Customers</span>
-                       <div class="reviews">
-                        <span class="customer-names"><b>sarah helmy </b></span>
-                        <span class="verified" >verified customer</span>
-                        <span class="rating" >⭐️⭐️⭐️⭐️⭐️</span>
-                        <span class = "review" > 
-           "The bouquet was honestly stunning! I ordered it for my sister’s birthday and she was so happy.
-            The flowers were super fresh and smelled amazing. Delivery came right on time. Very elegant packaging too!"
-            </span>
-           
-            <span class="customer-names"><b>Ahmed Sami </b></span>
-            <span class="verified" >verified customer</span>
-            <span class="rating" >⭐️⭐️⭐️⭐️</span>
-            <span class = "review" > 
-             "Beautiful flowers! I sent it to my mom for Mother’s Day and she loved it so much. The colors were bright and cheerful, and the bouquet looked exactly like the photo."
-           </span>
-           <span class="customer-names"><b>Dina Amr </b></span>
-           <span class="verified" >verified customer</span>
-           <span class="rating" > ⭐️⭐️⭐️⭐️</span>
-           <span class = "review" > 
-            "I sent it as an apology gift, and honestly... it saved me! The bouquet looked so elegant and the girl who received it was really impressed. Thank you for helping me fix the situation!"
-           
-           
-           </span>
-           
-           
-           
-                     </div>       
-                       
-                                </body>
-                                </html>
+  <span class = "reviews-title" title="customer reviews"> Happy Customers</span>
+  <div class="reviews" style="margin-top: 60px;">
+    <table>
+  <tr>
+   <td><span class="customer-names"><b> Ahmed Magdy</b></span>
+    <span class="verified" >verified customer</span></td>
+    <td><span class="rating" >Rating:⭐️⭐️⭐️⭐️</span>
+    <span class = "review" > 
+"For the price, this set is a steal. The plants were smaller than I expected, but they quickly took root and began to grow. I'm looking forward to seeing them in full bloom."
+   
+</span></td></tr>
+<tr>
+<td><span class="customer-names"><b>Kholoud  Yahia </b></span>
+<span class="verified" >verified customer</span></td>
+<td> <span class="rating" >Rating:⭐️⭐️⭐️⭐️</span>
+<span class = "review" > 
+"Out of the four plants, two thrived while the other two struggled despite my care. Customer service was responsive and offered helpful advice. Overall, a decent purchase."
+</span></td></tr>
+<tr>
+<td style="width: 400px"><span class="customer-names"><b>Dalia Samir</b></span>
+<span class="verified" >verified customer</span></td>
+<td style="width: 900px" ><span class="rating" >Rating:⭐️⭐️⭐️⭐️</span>
+<span class = "review" > 
+"I’m not great with plants but these roses are super forgiving. Just enough sun and water, and they keep blooming. They even survived the heat wave we had last week. Definitely beginner-friendly! ."
+
+
+</span></td></tr>
+</table>
+
+ </div>       
+ 
+<script>
+
+
+  window.onload = function() {
+     
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+          document.body.classList.add('dark-mode');
+      }
+  };
+
+  
+  function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      
+     
+      if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('dark-mode', 'enabled');
+      } else {
+          localStorage.setItem('dark-mode', 'disabled');
+      }
+  }
+
+
+</script>
+
+
+</body>
+</html>
