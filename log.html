@@ -3,101 +3,204 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="log.css">
+    <title>log in or sign up</title>
+    <link rel="stylesheet" href="infor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <section id="logcreat">
-    <div class="continer">
-        <div class="row">
-            <div id="welcome">
-                <div class="social">
-                    <h2> Welcome In Aura Flora</h2>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
-                    <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                </div>
-                <div class="btn">
-                    <div class="creat"><button>Creat Account</button></div>
-                    <div class="log"><button>log in</button></div>
-                </div>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="nav-left">
+                <img class="nav-logo" src="https://cdn.pixabay.com/photo/2012/04/13/00/44/leaves-31399_1280.png" alt="">
+                <a href="index.html" class="brand-name">
+                    <span style="color: rgb(180, 100, 160);"> Aura Flora</span>
+                </a>
             </div>
-            <div id="register" class="hide">
-                <form class="form">
-                    <h2 class="title">book from here</h2>
-                    <div class="input">
-
-                        <div>
-                            <label for="username">Full Name</label>
-                            <input class="in" name="name" id="username" type="text" placeholder="Your Name" required>
-                        </div>
-                        <div> <label for="password">Enter Your Passwarrd</label>
-                            <input class="in" type="password" name="password" id="password" placeholder="Your Passwarrd"
-                                required>
-                        </div>
-                        <div> <label for="number"> Enter Your Phone Number</label>
-                            <input class="in" type="number" name="number" id="number" placeholder="Your Phone" required>
-                        </div>
-                        <div> <label for="email">Enter Your Email</label>
-                            <input class="in" type="email" name="emai;" id="email" placeholder="Your Email" required>
-                        </div>
-                    </div>
-                    <h2 class="method">Payment Method</h2>
-                    <div class="pay">
-                        <div>
-                            <input checked type="radio" name="pay" value="cash" id="cash">
-                            <label for="cash">Cash</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="pay" value="creditcard" id="creditcard">
-                            <label for="creditcard">Credit Card</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="pay" value="online" id="online">
-                            <label for="online">Online</label>
-                        </div>
-                    </div>
-                    <button type="submit">Register</button>
-                    <span id="arrow"><i class="fa-solid fa-arrow-left"></i></span>
-                </form>
-            </div>
-
-
-
-            <div id="login" class="hide">
-                <div class="social">
-                    <h2 class="title">book from here</h2>
-                  
-                    <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            <div class="nav-right">
+                <a href="log.html" class="nav-item">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1144/1144760.png" alt="Login Icon">
+                    Log In
+                </a>
+                <a href="basket.html" class="nav-item">
+                    <img src="https://cdn-icons-png.flaticon.com/128/263/263142.png" alt="Basket Icon">
+                    Basket
+                </a>
+                <img class="nav-photo" src="https://img.icons8.com/?size=64&id=49318&format=png">
+                <div class="mode-images">
+                    <img onclick="toggleDarkMode()" src="https://cdn-icons-png.flaticon.com/128/606/606807.png" alt=" "
+                        title="Dark Mode">
                 </div>
-                <h2 class="h">Use Your Email And Passwarrd</h2>
-                <form><div class="input">
-                    <div>
-                        <input class="in" type="email" name="emai;" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div>
-                        <input class="in" type="password" name="password;" id="password" placeholder="Your Passwarrd"
-                            required>
-                    </div></div>
-                    <a href="#">Forget Your Passwarrd?</a> 
-                      <button type="submit">Log In</button> 
-                     
-                </form>
-                <span id="arrow" class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+
             </div>
-            <img src="https://i.postimg.cc/Yqp2wJJF/photo-2025-05-06-12-28-26.jpg" alt="flower">
         </div>
-</section>
-        <script src="test.js"></script>
+    </nav>
+   
+    <section id="logcreat">
+       
+        <div class="continer"> 
+            <h2 id="or" style="
+    text-align: center;
+    padding: 0px 0 18px; font-size: 30px;
+            ">Log in OR Sign up</h2>
+            <div class="row">
+                <div id="welcome">
+                    <div class="social">
+                        <h2> Welcome In Aura Flora</h2>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                    </div>
+                    <div class="btn">
+                        <div class="creat"><button>Sign up</button></div>
+                        <div class="log"><button>log in</button></div>
+                    </div>
+                </div>
+                <div id="register" class="hide">
+                    <form class="form">
+                        <h2 class="title">book from here</h2>
+                        <div class="input">
+
+                            <div>
+                                <label for="username">Full Name</label>
+                                <input class="in" name="name" id="username" type="text" placeholder="Your Name"
+                                    required>
+                            </div>
+                            <div> <label for="password">Enter Your Password</label>
+                                <input class="in" type="password" name="password" id="password"
+                                    placeholder="Your Passwarrd" required>
+                            </div>
+                            <div> <label for="number"> Enter Your Phone Number</label>
+                                <input class="in" type="number" name="number" id="number" placeholder="Your Phone"
+                                    required>
+                            </div>
+                            <div> <label for="email">Enter Your Email</label>
+                                <input class="in" type="email" name="emai;" id="email" placeholder="Your Email"
+                                    required>
+                            </div>
+                        </div>
+                        <a href="#">
+                        <button type="submit">Register</button></a>
+                        <span id="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+                    </form>
+                </div>
+
+
+
+                <div id="login" class="hide">
+                    <div class="social">
+                        <h2 class="title">book from here</h2>
+
+                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                    <h2 class="h">Use Your Email And Password</h2>
+                    <form>
+                        <div class="input">
+                            <div>
+                                <input class="in" type="email" name="emai;" id="email" placeholder="Your Email"
+                                    required>
+                            </div>
+                            <div>
+                                <input class="in" type="password" name="password;" id="password"
+                                    placeholder="Your Password" required>
+                            </div>
+                        </div>
+                        <a href="#">Forget Your Password?</a>
+                       <a href="#"> <button type="submit">Log In</button></a>
+
+                    </form>
+                    <span id="arrow" class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+                </div>
+                <img src="../img/aa7.jpg" alt="flower">
+            </div>
+
+        </section>
+            <!-- footer -->
+            <div class="footer-wrapper">
+                <footer class="main-footer">
+                    <div class="footer-container">
+
+                        <div class="footer-section">
+                            <h3>Get To Know Us</h3>
+                            <ul>
+                                <li><a href="aboutus.html" target="_blank">About Us</a></li>
+                                <li><a href="faqs.html" target="_blank">FAQs</a></li>
+                                <li><a href="Policy.html" target="_blank">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h3>My Account</h3>
+                            <ul>
+                                <li><a href="log.html" target="_blank">Log In</a></li>
+                                <li><a href="basket.html" target="_blank">Basket</a></li>
+                                <li><a href="infor.html" target="_blank">My Orders</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li>022856466</li>
+                                <li>0124576488</li>
+                                <li>0105589690</li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h3>Payment Methods</h3>
+                            <div class="payment-logos">
+                                <img src="https://i.postimg.cc/SRdVrWyv/cash1.jpg" alt="أمان"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/SsW-gnBHq/cash2.png" alt="أبل باي"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/2j7Hrf47/cash3.png" alt="الايد الي ماسكة ورد"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/7Zd9mPkw/cash8.png" alt="SYMPL"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/GtLxHHkJ/cash11.png" alt="value"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/Ss7GSW-zx/cash12.png" alt="visa"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/rsMQxhL4/cash4.jpg" alt="Contact"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/Gh3XpSKw/cash5.png" alt="فرصة"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/43c5MCft/cash6.png" alt="master card"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/zXd0HS2L/cash7.png" alt="اورنج كاش"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/7Zd9mPkw/cash8.png" alt="بايموب"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/vZcXrgC0/cash9.png" alt="بريميوم كارد"
+                                    style="width: 50px; height: auto;">
+                                <img src="https://i.postimg.cc/4yWbtsPC/cash13.png" alt="فودافون كاش"
+                                    style="width: 50px; height: auto;">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </footer>
+
+                <div class="bottom-footer">
+                    © 2025 Oraflora. All rights reserved.
+                </div>
+            </div>
+            <script>
+                function toggleDarkMode() {
+
+                    document.body.classList.toggle('dark-mode');
+                }
+            </script>
+    <script src="new.js"></script>
 </body>
 
 </html>
