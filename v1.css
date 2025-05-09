@@ -429,11 +429,7 @@
         
         /* Tablets and below (≤992px) */
 @media (max-width: 992px) {
-  .nav-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+  
 
   .product-name {
     font-size: 40px;
@@ -483,24 +479,7 @@
 
 /* Mobile devices (≤600px) */
 @media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
-  }
-
-  .nav-left,
-  .nav-right {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .nav-photo {
-    width: 40px;
-    height: 40px;
-  }
-
+  
   .product-name {
     font-size: 32px;
     left: 0;

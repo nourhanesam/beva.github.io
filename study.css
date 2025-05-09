@@ -436,18 +436,7 @@ color: rgba(53, 50, 50, 0.851);
      
    }
    @media (max-width: 768px) {
-    /* تضبيط الـ navbar */
-    .navbar, .nav-wrapper {
-      flex-direction: column;
-      height: auto;
-      padding: 10px;
-      text-align: center;
-    }
-  
-    .nav-left, .nav-right {
-      flex-direction: column;
-      gap: 10px;
-    }
+   
   
     .product-name {
       font-size: 35px;

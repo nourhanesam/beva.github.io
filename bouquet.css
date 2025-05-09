@@ -324,13 +324,7 @@ margin-top: 10px;
     gap: 10px;
     left: 0;
   }
-    .nav-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-left, .nav-right {
-        margin-bottom: 10px;
-    }
+    
 
 }
 body.dark-mode {
